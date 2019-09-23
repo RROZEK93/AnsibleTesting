@@ -1,4 +1,9 @@
-martin:
-    name: Martin D'vloper
-    job: Developer
-    skill: Elite
+- hosts: all
+  connection: ssh
+  tasks:
+    - name: This task uses ssh.
+      ping:
+
+    - name: This task uses paramiko.
+      connection: paramiko
+      ping:
