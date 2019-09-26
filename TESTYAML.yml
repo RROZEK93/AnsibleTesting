@@ -13,6 +13,5 @@
   tasks:
 
     - name: Run powershell script
-    
-    win_command: powershell.exe -ExecutionPolicy ByPass -File C:/temp/helloworld.ps1
+      win_command: powershell.exe -ExecutionPolicy ByPass -File C:/temp/helloworld.ps1
   
