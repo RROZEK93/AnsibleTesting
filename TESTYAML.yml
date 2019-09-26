@@ -13,11 +13,5 @@
   tasks:
 
     - name: Run powershell script
-    
-      expect:
         win_command: powershell.exe -ExecutionPolicy ByPass -File C:/temp/helloworld.ps1
-        responses:
-        Question:
-          - response1
-          - response2
-          - response3
+  
