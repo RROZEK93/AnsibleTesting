@@ -14,4 +14,4 @@
 
     - name: Run powershell script
 
-      script: C:/temp/helloworld.ps1
+      script: C:\temp\helloworld.ps1
