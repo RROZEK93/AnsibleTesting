@@ -14,4 +14,4 @@
 
     - name: Run powershell script
 
-      win_shell: C:/temp/helloworld.ps1
+      Win_Command: powershell.exe -ExecutionPolicy ByPass -File C:/temp/helloworld.ps1
