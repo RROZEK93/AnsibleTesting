@@ -14,8 +14,6 @@
 
 - hosts: all
  
- tasks:
- 
  - name: Gathering ipam auth token
     uri:
      validate_certs: false
