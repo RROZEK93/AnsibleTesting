@@ -10,9 +10,9 @@
 # You can then successfully pass that variable
 # to other plays if grouping roles together.
 #
-- name: IPAM TESTING
+ - name: IPAM TESTING
 
-- hosts: all
+ - hosts: all
  
  - name: Gathering ipam auth token
     uri:
