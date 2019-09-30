@@ -12,7 +12,7 @@
 #
 - name: IPAM TESTING
 
- hosts: all
+- hosts: all
  
  tasks:
  
