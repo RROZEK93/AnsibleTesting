@@ -13,7 +13,7 @@
  - name: IPAM TESTING
 
  - hosts: all
- tasks: 
+ 
  - name: Gathering ipam auth token
    uri:
      validate_certs: false
@@ -22,14 +22,14 @@
      user: "{{ ipam.api_user }}"
      password: "{{ ipam.api_pass | trim }}"
      force_basic_auth: yes
-   register: output
+    register: output
 
  - name: checking subnet for next available ip address
    uri:
      validate_certs: false
      url: "{{ ipam.available_ip }}{{ ipam.subnet_id | int }}"
      headers: token="{{ output.json.data.token }}"
-   register: ip_address
+    register: ip_address
 
 
 #- name: reserve ip address
