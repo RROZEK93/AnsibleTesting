@@ -10,23 +10,28 @@
 # You can then successfully pass that variable
 # to other plays if grouping roles together.
 #
-hosts: all
-- name: Gathering ipam auth token
-  uri:
-    validate_certs: false
-    url: "{{ ipam.token_request }}"
-    method: POST
-    user: "{{ ipam.api_user }}"
-    password: "{{ ipam.api_pass | trim }}"
-    force_basic_auth: yes
-  register: output
+- name: IPAM TESTING
 
-- name: checking subnet for next available ip address
-  uri:
-    validate_certs: false
-    url: "{{ ipam.available_ip }}{{ ipam.subnet_id | int }}"
-    headers: token="{{ output.json.data.token }}"
-  register: ip_address
+ hosts: all
+ 
+ tasks:
+ 
+ - name: Gathering ipam auth token
+    uri:
+     validate_certs: false
+     url: "{{ ipam.token_request }}"
+     method: POST
+     user: "{{ ipam.api_user }}"
+     password: "{{ ipam.api_pass | trim }}"
+     force_basic_auth: yes
+    register: output
+
+ - name: checking subnet for next available ip address
+    uri:
+     validate_certs: false
+     url: "{{ ipam.available_ip }}{{ ipam.subnet_id | int }}"
+     headers: token="{{ output.json.data.token }}"
+    register: ip_address
 
 #- name: reserve ip address
 #  uri:
